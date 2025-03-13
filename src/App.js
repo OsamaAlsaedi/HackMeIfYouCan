@@ -7,6 +7,7 @@ import Home from './components/Home';
 import About from './components/HackMe';
 import Resume from './components/Resume';
 import HackMeIfYouCan from './components/HackMeIfYouCan';
+import LoginBypass from './components/LoginBypass';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="HackMeIfYouCan" element={<HackMeIfYouCan />} />
         <Route path="resume" element={<Resume />} />
+        <Route path="LoginBypass" element={<LoginBypass />} />
       </Route>
     </Routes>
   );

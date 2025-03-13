@@ -53,7 +53,7 @@ const Home = () => {
             />
           </h1>
           <h2>The website where you learn how to hack!</h2>
-          <Link to="/hackmeifyoucan" className="flat-button">Start Now</Link>
+          <Link to="/contact" className="flat-button">Start Now</Link>
         </div>
         <Logo />
       </div>
