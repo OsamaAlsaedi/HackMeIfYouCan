@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './index.scss';
-import LogoS from '../../assets/images/hackmeifyoucan.jpg'; 
+import LogoS from '../../assets/images/HackMeIfYouCan.png'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faHome, faUser, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faYoutube, faDiscord } from '@fortawesome/free-brands-svg-icons';
