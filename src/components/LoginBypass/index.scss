@@ -42,28 +42,22 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         position: relative;
-        
-        .text-animate {
-            opacity: 1 !important;
-            color: #000000;
-            animation: none !important;
-        }
-        
-        .text-animate-hover {
-            &:hover {
-                animation: glitch 0.3s linear;
-                color: #ff0000;
-            }
-        }
-        
-        span {
-            display: inline-block;
-            
-            &:hover {
-                animation: glitch 0.3s linear;
-            }
-        }
+        opacity: 0;
+        animation: login-bypass-fadeIn 1s forwards;
+        animation-delay: 1s;
     }
+}
+
+/* Only target the text-animate classes within LoginBypass */
+.login-bypass-left-side .text-animate {
+    /* Override only in this component */
+    opacity: 1;
+    color: #000000;
+}
+
+.login-bypass-left-side .text-animate-hover:hover {
+    animation: login-bypass-glitch 0.3s linear;
+    color: #ff0000;
 }
 
 .login-bypass-right-side {
@@ -74,29 +68,15 @@
         font-size: 24px;
         font-family: 'Courier New', monospace;
         opacity: 0;
-        animation: fadeIn 1s forwards;
+        animation: login-bypass-fadeIn 1s forwards;
         animation-delay: 2s;
         letter-spacing: 1px;
         text-transform: uppercase;
     }
 }
 
-@keyframes bounceIn {
-    0% {
-        transform: scale(0.3);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    80% {
-        transform: scale(0.89);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes glitch {
+/* Use component-specific animation names */
+@keyframes login-bypass-glitch {
     0% {
         transform: translate(0);
     }
@@ -117,7 +97,7 @@
     }
 }
 
-@keyframes fadeIn {
+@keyframes login-bypass-fadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -128,14 +108,7 @@
     }
 }
 
-// Add animation delays for each letter
-@for $i from 1 through 35 {
-    .text-animate._#{$i} {
-        animation-delay: #{$i / 10}s;
-    }
-}
-
-// Remove the login form styles that aren't needed
+/* Remove the login form styles that aren't needed */
 .login-container,
 .error-message,
 input,

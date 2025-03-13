@@ -15,8 +15,6 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route path= ""element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="HackMeIfYouCan" element={<HackMeIfYouCan />} />
-        <Route path="resume" element={<Resume />} />
         <Route path="LoginBypass" element={<LoginBypass />} />
       </Route>
     </Routes>

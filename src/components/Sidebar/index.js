@@ -24,7 +24,7 @@ const Sidebar = () => {
         <NavLink exact="true" activeclassname="active" to="/" onClick={() => setShowMobileNav(false)}>
           <FontAwesomeIcon icon={faHome} color="#4d4d4de" />
         </NavLink>
-        <NavLink exact="true" activeclassname="active" className="HackMeIfYouCan-link" to="/HackMeIfYouCan" onClick={() => setShowMobileNav(false)}>
+        <NavLink exact="true" activeclassname="active" className="LoginBypass-link" to="/LoginBypass" onClick={() => setShowMobileNav(false)}>
           <FontAwesomeIcon icon={faUser} color="#4d4d4de" />
         </NavLink>
 
