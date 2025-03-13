@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberLearn | Beginner's Guide to Cybersecurity</title>
+    <style>
+        :root {
+            --primary-color: #2a4494;
+            --secondary-color: #4062bb;
+            --accent-color: #8d99ae;
+            --background-color: #f8f9fa;
+            --text-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #e0e0e0;
+        }
+        
+        .hero {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .features {
+            padding: 4rem 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .content-section {
+            padding: 3rem 0;
+            background-color: white;
+        }
+        
+        .content-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .content-image {
+            width: 100%;
+            height: 300px;
+            background-color: var(--accent-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .cta-section {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #f1f1f1;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .content-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">CyberLearn</div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Begin Your Cybersecurity Journey</h1>
+            <p>Learn essential cybersecurity concepts and practices in a safe, educational environment designed for beginners</p>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <h2>Core Cybersecurity Topics</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Network Security</h3>
+                    <p>Understand how networks function and learn to identify common vulnerabilities in network infrastructure. Topics include packet analysis, firewall configuration, and intrusion detection systems.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Web Application Security</h3>
+                    <p>Discover how web applications work and learn about the OWASP Top 10 vulnerabilities including SQL injection, XSS, CSRF, and secure authentication principles.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Ethical Hacking</h3>
+                    <p>Learn the methodologies and tools used by ethical hackers, including reconnaissance techniques, vulnerability scanning, and responsible disclosure practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="content-section">
+        <div class="container">
+            <div class="content-container">
+                <div>
+                    <h2>Practice Safely in Controlled Environments</h2>
+                    <p>Our platform provides secure training environments where you can practice cybersecurity skills without causing harm. All exercises are designed to teach important security concepts while promoting ethical behavior.</p>
+                    <p>We emphasize the importance of permission, legality, and responsible disclosure in all our training materials. Remember that unauthorized access to systems is illegal and unethical.</p>
+                </div>
+                <div class="content-image">
+                    [Virtual Lab Environment]
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="content-section" style="background-color: var(--background-color);">
+        <div class="container">
+            <div class="content-container">
+                <div class="content-image">
+                    [Learning Path Diagram]
+                </div>
+                <div>
+                    <h2>Structured Learning Path</h2>
+                    <p>Follow our carefully designed learning path to build your cybersecurity knowledge from the ground up:</p>
+                    <ol>
+                        <li>Cybersecurity Fundamentals</li>
+                        <li>Networking Basics</li>
+                        <li>Linux Command Line Skills</li>
+                        <li>Web Technologies</li>
+                        <li>Common Vulnerabilities & Exploits</li>
+                        <li>Defense Techniques</li>
+                        <li>Ethical Hacking Methodology</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Learning?</h2>
+            <p>Join thousands of students learning cybersecurity the right way - with ethics and best practices at the core.</p>
+            <a href="#" class="btn">Explore Courses</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CyberLearn. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Code of Ethics</a></li>
+            </ul>
+            <p>CyberLearn is dedicated to educating the next generation of ethical security professionals.</p>
+        </div>
+    </footer>
+</body>
+</html> 

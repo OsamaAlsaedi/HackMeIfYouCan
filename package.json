@@ -1,8 +1,8 @@
 {
-  "name": "react-portfolio",
+  "name": "HackMeIfYouCan",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://masooniez.github.io/react-portfolio",
+  "homepage": "https://masooniez.github.io/HackMeIfYouCan",
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
@@ -11,6 +11,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/react-helmet": "^6.1.11",
     "animate.css": "^4.1.1",
     "gsap-trial": "^3.12.5",
     "loaders.css": "^0.1.2",
@@ -18,6 +19,7 @@
     "react": "^18.2.0",
     "react-doc-viewer": "^0.1.14",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-leaflet": "^4.2.1",
     "react-loaders": "^3.0.1",
     "react-router-dom": "^6.22.3",

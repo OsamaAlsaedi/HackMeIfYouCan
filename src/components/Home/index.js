@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Loader from 'react-loaders';
 import AnimatedLetters from '../AnimatedLetters';
 import GradientText from './GradientText';
@@ -9,6 +9,7 @@ import './index.scss';
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
+  const navigate = useNavigate();
 
   const hiArray = ['H', 'i', ','];
   const imArray = ['W', 'e', 'l', 'c', 'o', 'm', 'e'];
