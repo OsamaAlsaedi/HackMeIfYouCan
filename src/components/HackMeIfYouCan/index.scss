@@ -1,12 +1,12 @@
 /* Ensure the container uses flex to display two columns */
-.container.contact-page {
+.hack-me-container {
   display: flex;
   min-height: 100vh;
 }
 
 /* Common styles for both sides */
-.left-side,
-.right-side {
+.hack-me-left-side,
+.hack-me-right-side {
   flex: 1; /* Each side takes up equal width */
   display: flex;
   flex-direction: column;
@@ -17,13 +17,20 @@
 }
 
 /* Left side: Light background with dark text */
-.left-side {
+.hack-me-left-side {
   background-color: #ffffff;
   color: #000000;
+
+  h1 {
+    font-size: 53px;
+    margin: 0;
+    font-family: 'Coolvetica';
+    font-weight: 400;
+  }
 }
 
 /* Right side: Dark background with light text */
-.right-side {
+.hack-me-right-side {
   background-color: #000000;
   color: #ffffff;
 }
@@ -45,7 +52,7 @@ button:hover {
   background-color: #cc0000;
 }
 
-.flat-button {
+.hack-me-flat-button {
   color: #000000;
   font-size: 13px;
   font-weight: 400;
@@ -63,4 +70,9 @@ button:hover {
     background: #000000;
     color: #ffffff;
   }
+}
+
+.hack-me-contact-form {
+  width: 100%;
+  margin-top: 20px;
 }

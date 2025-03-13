@@ -1,59 +1,124 @@
-// index.scss
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+.login-bypass-container {
     display: flex;
+    min-height: 100vh;
+    background: linear-gradient(to right, #ffffff 50%, #000000 50%);
+}
+
+.login-bypass-left-side,
+.login-bypass-right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .login-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
     text-align: center;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  .error-message {
-    color: red;
+    padding: 100px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 49.5%, #333 49.5%, #333 50.5%, transparent 50.5%);
+        background-size: 10px 10px;
+        opacity: 0.05;
+        pointer-events: none;
+    }
+}
+
+.login-bypass-left-side {
+    background-color: transparent;
+    color: #000000;
+
+    h1 {
+        font-size: 65px;
+        margin: 0;
+        font-family: 'Coolvetica';
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        
+        span {
+            display: inline-block;
+            
+            &:hover {
+                animation: glitch 0.3s linear;
+            }
+        }
+    }
+}
+
+.login-bypass-right-side {
+    background-color: transparent;
+    color: #ffffff;
+
+    .login-bypass-subtitle {
+        font-size: 24px;
+        font-family: 'Courier New', monospace;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+        animation-delay: 2s;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Remove the login form styles that aren't needed
+.login-container,
+.error-message,
+input,
+button {
     display: none;
-    margin-top: 10px;
-  }
-  
-  .error-message.show {
-    display: block;
-  }
-  
+}
+
+@media screen and (max-width: 768px) {
+    .login-bypass-container {
+        flex-direction: column;
+        background: linear-gradient(to bottom, #ffffff 50%, #000000 50%);
+    }
+
+    .login-bypass-left-side h1 {
+        font-size: 40px;
+    }
+
+    .login-bypass-right-side .login-bypass-subtitle {
+        font-size: 18px;
+    }
+}
