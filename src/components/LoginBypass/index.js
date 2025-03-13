@@ -1,40 +1,28 @@
-import { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import AnimatedLetters from '../AnimatedLetters';
-import './index.scss';
+// index.js
 
-const HackMeIfYouCan = () => {
-  const [letterClass, setLetterClass] = useState('text-animate');
-  const refForm = useRef();
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLetterClass('text-animate-hover');
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <div className="container contact-page">
-      <div className="left-side">
-        <h1>
-          <AnimatedLetters
-            letterClass={letterClass}
-            strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
-            idx={15}
-          />
-        </h1>
-        <div className="contact-form" ref={refForm}>
-          <Link to="/LoginBypass" className="flat-button">Start Now</Link>
-        </div>
-      </div>
-      <div className="right-side">
-        <p>
-          Hello World!
-        </p>
-      </div>
-    </div>
-  );
-};
-
-export default HackMeIfYouCan;
+document.addEventListener("DOMContentLoaded", function () {
+    const loginForm = document.getElementById("loginForm");
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const errorMessage = document.getElementById("errorMessage");
+  
+    // Hardcoded credentials for bypass (you can adjust this for your hackathon)
+    const validUsername = "admin";
+    const validPassword = "password123"; // Use a bypass password here for the hackathon.
+  
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+  
+      // Check if the entered username and password match the valid ones
+      if (
+        usernameInput.value === validUsername &&
+        passwordInput.value === validPassword
+      ) {
+        // Simulate login bypass (you can redirect to a new page or change content)
+        window.location.href = "bypassed.html"; // Redirect to a bypassed page
+      } else {
+        // Display an error message if credentials don't match
+        errorMessage.style.display = "block";
+      }
+    });
+  });
