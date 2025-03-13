@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './index.scss';
 import LogoS from '../../assets/images/hackmeifyoucan.jpg'; 
-import LogoSubtitle from '../../assets/images/hackmeifyoucan.jpg'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faHome, faUser, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faYoutube, faDiscord } from '@fortawesome/free-brands-svg-icons';
@@ -14,7 +13,6 @@ const Sidebar = () => {
     <div className='nav-bar'>
       <Link className='logo' to='' onClick={() => setShowMobileNav(false)}>
         <img src={LogoS} alt='logo' />
-        <img className='sub-logo' src={LogoSubtitle} alt='logo subtitle' />
       </Link>
 
       {/* Hamburger icon appears on mobile; clicking it shows the nav */}
