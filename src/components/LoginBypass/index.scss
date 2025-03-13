@@ -67,11 +67,17 @@
     .login-bypass-subtitle {
         font-size: 24px;
         font-family: 'Courier New', monospace;
-        opacity: 0;
-        animation: login-bypass-fadeIn 1s forwards;
-        animation-delay: 2s;
         letter-spacing: 1px;
         text-transform: uppercase;
+        color: #ffffff;
+        opacity: 1;
+
+        &.encrypted {
+            color: #ff0000;
+            text-shadow: 0 0 5px #ff5100;
+            animation: login-bypass-glitch 0.2s infinite;
+            opacity: 1;
+        }
     }
 }
 

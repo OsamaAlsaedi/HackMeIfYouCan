@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AnimatedLetters from '../AnimatedLetters';
+import DecryptedText from './DecryptedText';
 import './index.scss';
 
 const LoginBypass = () => {
@@ -35,9 +36,18 @@ const LoginBypass = () => {
                 </h1>
             </div>
             <div className="login-bypass-right-side">
-                <p className="login-bypass-subtitle">
-                    Can you find the vulnerability?
-                </p>
+                <DecryptedText
+                    text="Can you find the vulnerability?"
+                    speed={50}
+                    maxIterations={30}
+                    characters="!@#$%^&*()_+1234567890"
+                    className="login-bypass-subtitle"
+                    encryptedClassName="login-bypass-subtitle encrypted"
+                    animateOn="view"
+                    revealDirection="center"
+                    sequential={true}
+                    useOriginalCharsOnly={false}
+                />
             </div>
         </div>
     );

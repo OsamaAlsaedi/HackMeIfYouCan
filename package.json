@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/react-helmet": "^6.1.11",
     "animate.css": "^4.1.1",
+    "framer-motion": "^12.5.0",
     "gsap-trial": "^3.12.5",
     "loaders.css": "^0.1.2",
     "ogl": "^1.0.11",
