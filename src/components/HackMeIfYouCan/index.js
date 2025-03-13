@@ -15,8 +15,8 @@ const HackMeIfYouCan = () => {
   }, []);
 
   return (
-    <div className="hack-me-container">
-      <div className="hack-me-left-side">
+    <div className="container contact-page">
+      <div className="left-side">
         <h1>
           <AnimatedLetters
             letterClass={letterClass}
@@ -24,11 +24,11 @@ const HackMeIfYouCan = () => {
             idx={15}
           />
         </h1>
-        <div className="hack-me-contact-form" ref={refForm}>
-          <Link to="/LoginBypass" className="hack-me-flat-button">Start Now</Link>
+        <div className="contact-form" ref={refForm}>
+          <Link to="/LoginBypass" className="flat-button">Start Now</Link>
         </div>
       </div>
-      <div className="hack-me-right-side">
+      <div className="right-side">
         <p>
           Hello World!
         </p>

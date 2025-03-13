@@ -1,12 +1,12 @@
 /* Ensure the container uses flex to display two columns */
-.hack-me-container {
+.container.contact-page {
   display: flex;
   min-height: 100vh;
 }
 
 /* Common styles for both sides */
-.hack-me-left-side,
-.hack-me-right-side {
+.left-side,
+.right-side {
   flex: 1; /* Each side takes up equal width */
   display: flex;
   flex-direction: column;
@@ -17,26 +17,35 @@
 }
 
 /* Left side: Light background with dark text */
-.hack-me-left-side {
+.left-side {
   background-color: #ffffff;
   color: #000000;
-
-  h1 {
-    font-size: 53px;
-    margin: 0;
-    font-family: 'Coolvetica';
-    font-weight: 400;
-  }
 }
 
 /* Right side: Dark background with light text */
-.hack-me-right-side {
+.right-side {
   background-color: #000000;
   color: #ffffff;
 }
 
 /* Button styling */
-.hack-me-flat-button {
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #cc0000;
+}
+
+.flat-button {
   color: #000000;
   font-size: 13px;
   font-weight: 400;
@@ -53,33 +62,5 @@
   &:hover {
     background: #000000;
     color: #ffffff;
-  }
-}
-
-.hack-me-contact-form {
-  width: 100%;
-  margin-top: 20px;
-}
-
-@media screen and (max-width: 1200px) {
-  .hack-me-left-side h1:before,
-  .hack-me-left-side h1:after {
-    display: none;
-  }
-
-  .hack-me-container {
-    flex-direction: column;
-  }
-
-  .hack-me-left-side,
-  .hack-me-right-side {
-    padding: 20px;
-  }
-
-  .hack-me-flat-button {
-    float: none;
-    display: block;
-    margin: 20px auto 0 auto;
-    width: 124px;
   }
 }
