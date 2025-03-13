@@ -84,10 +84,10 @@ html {
   max-height: 90%;
 }
 
-.container.contact-page .text-animate-hover:hover,
+.container.HackMeIfYouCan-page .text-animate-hover:hover,
 .container.about-page .text-animate-hover:hover,
 .container.portfolio-page .text-animate-hover:hover {
-  color: #fff;
+  color: #000000;
 }
 
 /* Resume-specific styles */
@@ -126,7 +126,7 @@ html {
   margin-left: 1000px;
   border-radius: 10px;
   overflow: hidden;
-  background: rgb(255, 255, 255);
+  background: rgb(245, 245, 245);
 }
 
 .container.resume-page iframe {
