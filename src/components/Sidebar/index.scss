@@ -77,14 +77,14 @@
       a:first-child::after {
         content: 'HOME';
       }
-      a.HackMeIfYouCan-link::after {
-        content: 'HackMe';
+      a.LoginBypass-link::after {
+        content: 'HACKME';
       }
     }
   
     a.active {
       svg {
-        color: #ffd770;
+        color: #ffb700;
       }
     }
   
@@ -105,7 +105,7 @@
           font-size: 15px;
           line-height: 16px;
           &:hover svg {
-            color: #ffd770;
+            color: #ff0000;
           }
         }
       }
