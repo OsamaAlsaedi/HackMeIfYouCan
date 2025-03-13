@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import './index.scss';
 import { useState, useEffect } from 'react';
 import AnimatedLetters from '../AnimatedLetters';
-import MasonSelfie from '../../assets/images/mason selfie.png'; // Adjust path if needed
 
 const Resume = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
@@ -34,7 +33,6 @@ const Resume = () => {
       <div className="resume-wrap">
         {/* Circular image above the download button */}
         <div className="photo-circle">
-          <img src={MasonSelfie} alt="Mason Selfie" />
         </div>
         <a 
           href={`${process.env.PUBLIC_URL}/resume/Mason_Resume.pdf`} 

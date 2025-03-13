@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Loader from 'react-loaders'; // Optional, if you want to include the loader
 import AnimatedLetters from '../AnimatedLetters';
-import LogoTitle from '../../assets/images/mLogo.png'; // Adjust this path if needed
+
 import Logo from './Logo';
 import './index.scss';
 
@@ -10,9 +10,10 @@ const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
 
   const hiArray = ['H', 'i', ','];
-  const imArray = ['I', "'", 'm'];
-  const nameArray = ['a', 's', 'o', 'n',','];
-  const jobArray = ['w', 'e', 'b', ' ', 'd', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r'];
+  const imArray = ['W', 'e', 'l', 'c', 'o', 'm', 'e'];
+  const space = [' ']; // Add a single space character here
+  const toArray = ['T', 'o'];
+  const title = ['H', 'a', 'c', 'k', 'M', 'e', ' ', 'I', 'f', ' ', 'Y', 'o', 'u', ' ', 'C', 'a', 'n'];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -31,15 +32,16 @@ const Home = () => {
             <br />
             {/* Animate "I'm" */}
             <AnimatedLetters letterClass={letterClass} strArray={imArray} idx={hiArray.length + 1} />
-            <img src={LogoTitle} alt="developer" className="logo-title" />
-            {/* Animate name */}
-            <AnimatedLetters letterClass={letterClass} strArray={nameArray} idx={hiArray.length + imArray.length + 1} />
+            {/* Animate space */}
+            <AnimatedLetters letterClass={letterClass} strArray={space} idx={hiArray.length + imArray.length + 1} />
+            {/* Animate "To" */}
+            <AnimatedLetters letterClass={letterClass} strArray={toArray} idx={hiArray.length + imArray.length + space.length + 1} />
             <br />
-            {/* Animate job title */}
-            <AnimatedLetters letterClass={letterClass} strArray={jobArray} idx={20} />
+            {/* Animate title */}
+            <AnimatedLetters letterClass={letterClass} strArray={title} idx={hiArray.length + imArray.length + space.length + toArray.length + 1} />
           </h1>
-          <h2>Frontend Developer / Developing Cyber Security Major / Computer Science Major</h2>
-          <Link to="/contact" className="flat-button">CONTACT ME</Link>
+          <h2>The website where you learn how to hack!</h2>
+          <Link to="/contact" className="flat-button">Start Now</Link>
         </div>
         <Logo />
       </div>
