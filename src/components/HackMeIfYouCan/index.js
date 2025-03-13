@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import AnimatedLetters from '../AnimatedLetters';
 import './index.scss';
-
 import Loader from 'react-loaders';
 import emailjs from '@emailjs/browser';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
@@ -19,7 +18,7 @@ const redIcon = L.icon({
   shadowSize: [55, 55]
 });
 
-const Contact = () => {
+const HackMeIfYouCan = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
     const refForm = useRef();
 
@@ -133,4 +132,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default HackMeIfYouCan;

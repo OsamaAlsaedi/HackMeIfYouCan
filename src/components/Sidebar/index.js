@@ -4,7 +4,7 @@ import './index.scss';
 import LogoS from '../../assets/images/mLogo.png'; 
 import LogoSubtitle from '../../assets/images/MasonLOGOS.png'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faHome, faUser, faFile, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import {  faHome, faUser, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faYoutube, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 const Sidebar = () => {
@@ -26,14 +26,8 @@ const Sidebar = () => {
         <NavLink exact="true" activeclassname="active" to="/" onClick={() => setShowMobileNav(false)}>
           <FontAwesomeIcon icon={faHome} color="#4d4d4de" />
         </NavLink>
-        <NavLink exact="true" activeclassname="active" className="about-link" to="/about" onClick={() => setShowMobileNav(false)}>
+        <NavLink exact="true" activeclassname="active" className="HackMeIfYouCan-link" to="/HackMeIfYouCan" onClick={() => setShowMobileNav(false)}>
           <FontAwesomeIcon icon={faUser} color="#4d4d4de" />
-        </NavLink>
-        <NavLink exact="true" activeclassname="active" className="contact-link" to="/contact" onClick={() => setShowMobileNav(false)}>
-          <FontAwesomeIcon icon={faEnvelope} color="#4d4d4de" />
-        </NavLink>
-        <NavLink exact="true" activeclassname="active" className="resume-link" to="/resume" onClick={() => setShowMobileNav(false)}>
-          <FontAwesomeIcon icon={faFile} color="#4d4d4de" />
         </NavLink>
 
         {/* Close icon inside the mobile nav */}
