@@ -322,6 +322,25 @@ const FinancialSite = () => {
     </div>
   );
 };
+// 🕵️‍♂️ Welcome to Cyber Practice Mode
+// First hint: open the browser console.
+
+// Log hidden console messages
+console.log("%c🧠 Cyber Hint #1: Not all elements are added in HTML...", "color: green; font-weight: bold;");
+console.log("%c🔍 Look for DOM elements added dynamically in the script.", "color: purple;");
+
+// Add hidden element to DOM
+const hiddenDiv = document.createElement("div");
+hiddenDiv.textContent = "🎯 Cyber Clue #2: This was added by JS!";
+hiddenDiv.style.display = "none";
+hiddenDiv.className = "cyber-hidden";
+document.body.appendChild(hiddenDiv);
+
+// Add a base64-encoded comment to confuse/teach
+/* Clue: Q29uZ3JhdHMsIHlvdSBmb3VuZCB0aGUgYmFzZTY0IGNvZGUhIFRoZSBmbGFnIGlzOiB7ZmxhZ19pbl9jc3N9 */
+
+// Final console message
+console.warn("🚨 Cyber Hint #3: The flag may be styled to disappear. Use DevTools to reveal it.");
 
 export default FinancialSite;
 /* hi */

@@ -783,3 +783,26 @@ $transition: all 0.3s ease;
     }
   }
 }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fafafa;
+  text-align: center;
+  padding: 2rem;
+
+  // 🧩 Inspect this element carefully...
+  &::after {
+    content: "🕶️ Cyber Hint #4: Clues might be pseudo-elements.";
+    color: transparent; // Invisible unless inspected
+    user-select: text;
+  }
+}
+
+.cyber-hidden {
+  display: none;
+
+  // 🕵️ Secret: You found the cyber-hidden class!
+  // Reveal it by changing 'display' in DevTools.
+}
+
+// 🧪 Bonus hint: SCSS compiles away comments, but this one is for you, the human.
+// Clue: Try selecting all text on the page — you might find something...
