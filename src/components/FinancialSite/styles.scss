@@ -1,362 +1,377 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fafafa;
-  text-align: center;
-  padding: 2rem;
+// Global Variables
+$primary-color: #0066cc;
+$secondary-color: #004d99;
+$accent-color: #00cc99;
+$background-color: #ffffff;
+$text-color: #1a1a1a;
+$gray-light: #f5f5f5;
+$gray-medium: #e0e0e0;
 
-  // 🧩 Inspect this element carefully...
-  &::after {
-    content: "🕶️ Cyber Hint #4: Clues might be pseudo-elements.";
-    color: transparent; // Invisible unless inspected
-    user-select: text;
+.financial-site {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: $background-color;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .financial-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    // Container
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      position: relative;
+    }
+
+    // Header
+    header {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid rgba(224, 224, 224, 0.6);
+      padding: 0.5rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: $primary-color;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      span {
+        color: $text-color;
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        color: $text-color;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease;
+        white-space: nowrap;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    .cta-button {
+      background-color: $primary-color;
+      color: white !important;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+
+    // Hero Section
+    .hero {
+      width: 100%;
+      margin-top: 0;
+      padding: 4rem 0 2rem;
+      background: linear-gradient(135deg, $primary-color, $secondary-color);
+      color: white;
+      text-align: center;
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1rem;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+
+      p {
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
+        max-width: 800px;
+        margin: 0 auto 1.5rem;
+        opacity: 0.9;
+      }
+
+      .hero-cta {
+        display: inline-block;
+        background-color: $background-color;
+        color: $primary-color;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    // Features Section
+    .features {
+      width: 100%;
+      padding: 4rem 0;
+      background-color: $gray-light;
+
+      .container {
+        text-align: center;
+      }
+
+      h2 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 3rem;
+        color: $text-color;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        width: 100%;
+      }
+
+      .feature-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        h3 {
+          color: $primary-color;
+          margin-bottom: 1rem;
+          font-size: 1.25rem;
+        }
+
+        p {
+          color: #666;
+          font-size: 0.95rem;
+          line-height: 1.6;
+        }
+      }
+    }
+
+    // Stats Section
+    .stats {
+      width: 100%;
+      padding: 4rem 0;
+      background-color: white;
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        text-align: center;
+        width: 100%;
+      }
+
+      .stat-item {
+        h3 {
+          font-size: 2.5rem;
+          color: $primary-color;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          color: #666;
+          font-size: 0.9rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+      }
+    }
+
+    // CTA Section
+    .cta-section {
+      width: 100%;
+      padding: 6rem 0;
+      background: linear-gradient(135deg, $accent-color, $primary-color);
+      color: white;
+      text-align: center;
+
+      h2 {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        opacity: 0.9;
+      }
+    }
+
+    // Footer
+    footer {
+      width: 100%;
+      background-color: #1a1a1a;
+      color: white;
+      padding: 4rem 0 2rem;
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+        width: 100%;
+      }
+
+      .footer-section {
+        h3 {
+          color: white;
+          margin-bottom: 1rem;
+          font-size: 1.1rem;
+        }
+
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+            margin-bottom: 0.5rem;
+
+            a {
+              color: #999;
+              text-decoration: none;
+              transition: color 0.3s ease;
+              font-size: 0.9rem;
+
+              &:hover {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid #333;
+        color: #999;
+        font-size: 0.9rem;
+      }
+    }
   }
 }
 
-.cyber-hidden {
-  display: none;
+// Media Queries
+@media screen and (max-width: 992px) {
+  .financial-site {
+    .financial-wrapper {
+      .nav-links {
+        display: none;
+      }
 
-  // 🕵️ Secret: You found the cyber-hidden class!
-  // Reveal it by changing 'display' in DevTools.
+      .hero {
+        padding: 6rem 0 3rem;
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+          padding: 0 1rem;
+        }
+      }
+
+      .features {
+        .features-grid {
+          grid-template-columns: 1fr;
+          padding: 0 1rem;
+        }
+      }
+
+      .stats {
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
 }
 
-// 🧪 Bonus hint: SCSS compiles away comments, but this one is for you, the human.
-// Clue: Try selecting all text on the page — you might find something...
+@media screen and (max-width: 600px) {
+  .financial-site {
+    .financial-wrapper {
+      .hero {
+        h1 {
+          font-size: 2rem;
+          padding: 0 1rem;
+        }
+      }
 
-/* Variables */
-:root {
-  --primary-color: #0066cc;
-  --secondary-color: #004d99;
-  --accent-color: #00cc99;
-  --background-color: #ffffff;
-  --text-color: #1a1a1a;
-  --gray-light: #f5f5f5;
-  --gray-medium: #e0e0e0;
+      .stats {
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  }
 }
-
-/* Financial Site Specific Styles */
-.financial-container {
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-  -webkit-animation: fadeIn 1s forwards;
-  padding-top: 0;
-  top: 0;
-  height: auto;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-/* Header */
-.financial-header {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid rgba(224, 224, 224, 0.6);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-  height: 70px;
-}
-
-.header-content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-
-.logo span {
-  color: var(--text-color);
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  margin: 0;
-}
-
-.nav-links a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: var(--primary-color);
-}
-
-.cta-button {
-  background-color: var(--primary-color);
-  color: white !important;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: var(--secondary-color);
-}
-
-/* Hero Section */
-.hero {
-  padding-top: 140px;
-  padding-bottom: 70px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  text-align: center;
-  width: 100%;
-}
-
-.hero-content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  top: auto;
-  left: auto;
-  transform: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 1rem;
-  font-weight: 800;
-  line-height: 1.2;
-  color: white;
-  left: 0;
-}
-
-.hero p {
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
-  max-width: 800px;
-  margin: 0 auto 1.5rem;
-  opacity: 0.9;
-  color: white;
-  text-align: center;
-}
-
-.hero-cta {
-  display: inline-block;
-  background-color: var(--background-color);
-  color: var(--primary-color);
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 1rem;
-}
-
-.hero-cta:hover {
-  transform: translateY(-2px);
-}
-
-/* Features Section */
-.features {
-  padding: 80px 0;
-  background-color: var(--gray-light);
-  width: 100%;
-}
-
-.features-content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.features h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  margin-bottom: 3rem;
-  color: var(--text-color);
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  width: 100%;
-}
-
-.feature-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  animation: fadeIn 0.5s forwards;
-  -webkit-animation: fadeIn 0.5s forwards;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-}
-
-.feature-card h3 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}
-
-.feature-card p {
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* Stats Section */
-.stats {
-  padding: 80px 0;
-  background-color: white;
-  width: 100%;
-}
-
-.stats-content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  text-align: center;
-  width: 100%;
-}
-
-.stat-item {
-  animation: fadeIn 0.5s forwards;
-  -webkit-animation: fadeIn 0.5s forwards;
-}
-
-.stat-item h3 {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-}
-
-.stat-item p {
-  color: #666;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* CTA Section */
-.cta-section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-  color: white;
-  text-align: center;
-  width: 100%;
-}
-
-.cta-content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.cta-section h2 {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  margin-bottom: 1.5rem;
-  color: white;
-}
-
-.cta-section p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  opacity: 0.9;
-  color: white;
-}
-
-/* Footer */
-.financial-footer {
-  background-color: #1a1a1a;
-  color: white;
-  padding: 80px 0 40px;
-  width: 100%;
-}
-
-.footer-content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-  width: 100%;
-}
-
-.footer-section h3 {
-  color: white;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-.footer-section ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-section li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-section a {
-  color: #999;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-size: 0.9rem;
-}
-
-.footer-section a:hover {
-  color: white;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1}
