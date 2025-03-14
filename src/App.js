@@ -5,16 +5,18 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import LoginBypass from './components/LoginBypass';
+import Resume from './components/Resume';
 import FinancialSite from './components/FinancialSite';
 
 function App() {
   return (
     <Routes>
+      <Route path="/sample-financial" element={<FinancialSite />} />
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="loginbypass" element={<LoginBypass />} />
+        <Route path="LoginBypass" element={<LoginBypass />} />
+        <Route path="resume" element={<Resume />} />
       </Route>
-      <Route path="/financial" element={<FinancialSite />} />
     </Routes>
   );
 }
