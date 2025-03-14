@@ -265,7 +265,7 @@ const FinancialSite = () => {
 
             <section className="cta-section">
               <div className="container">
-                <h2>Ready to Experience Modern Banking?</h2>
+                <h2>Ready to Experience Modern Bankng?</h2>
                 <p>Join millions of users who trust SecureFinance for their banking needs.</p>
                 <a href="#signup" className="cta-button">Open Account Now</a>
               </div>

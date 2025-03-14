@@ -14,7 +14,7 @@ function App() {
       <Route path="/sample-financial" element={<FinancialSite />} />
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="LoginBypass" element={<LoginBypass />} />
+        <Route path="Loginbypass" element={<LoginBypass />} />
         <Route path="resume" element={<Resume />} />
       </Route>
     </Routes>
