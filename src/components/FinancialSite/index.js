@@ -1,36 +1,55 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React, { useEffect } from 'react';
 import './styles.scss';
+// 🕵️‍♂️ Welcome to Cyber Practice Mode
+// First hint: open the browser console.
+
+// Log hidden console messages
+console.log("%c🧠 Cyber Hint #1: Not all elements are added in HTML...", "color: green; font-weight: bold;");
+console.log("%c🔍 Look for DOM elements added dynamically in the script.", "color: purple;");
+
+// Add hidden element to DOM
+const hiddenDiv = document.createElement("div");
+hiddenDiv.textContent = "🎯 Cyber Clue #2: This was added by JS!";
+hiddenDiv.style.display = "none";
+hiddenDiv.className = "cyber-hidden";
+document.body.appendChild(hiddenDiv);
+
+// Add a base64-encoded comment to confuse/teach
+/* Clue: Q29uZ3JhdHMsIHlvdSBmb3VuZCB0aGUgYmFzZTY0IGNvZGUhIFRoZSBmbGFnIGlzOiB7ZmxhZ19pbl9jc3N9 */
+
+// Final console message
+console.warn("🚨 Cyber Hint #3: The flag may be styled to disappear. Use DevTools to reveal it.");
 
 const FinancialSite = () => {
+  // Add animation class after component mounts
+  useEffect(() => {
+    document.querySelector('.financial-container').style.opacity = '1';
+  }, []);
+
   return (
-    <div className="financial-site">
-      <Helmet>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>SecureFinance | Modern Financial Solutions</title>
-      </Helmet>
-      <div className="financial-wrapper">
-        <header>
-          <div className="container">
-            <a href="#" className="logo">
+    <div className="page">
+      <div className="financial-container container">
+        <header className="financial-header">
+          <div className="header-content">
+            <a href="/" className="logo">
               Secure<span>Finance</span>
             </a>
             <nav>
               <ul className="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#solutions">Solutions</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact" className="cta-button">Get Started</a></li>
+                <li><a href="#features">FEATURES</a></li>
+                <li><a href="#solutions">SOLUTIONS</a></li>
+                <li><a href="#pricing">PRICING</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#contact" className="cta-button">GET STARTED</a></li>
               </ul>
             </nav>
           </div>
         </header>
 
         <section className="hero">
-          <div className="container">
-            <h1>Secure Financial Solutions for the Digital Age</h1>
-            <p>
+          <div className="text-zone hero-content">
+            <h1 className="text-animate-hover">Secure Financial Solutions for the Digital Age</h1>
+            <p className="text-animate-hover">
               Experience the future of financial management with our cutting-edge platform.
               Secure, efficient, and designed for modern businesses.
             </p>
@@ -39,8 +58,8 @@ const FinancialSite = () => {
         </section>
 
         <section className="features" id="features">
-          <div className="container">
-            <h2>Why Choose SecureFinance</h2>
+          <div className="features-content">
+            <h2 className="text-animate-hover">Why Choose SecureFinance</h2>
             <div className="features-grid">
               <div className="feature-card">
                 <h3>Advanced Security</h3>
@@ -65,40 +84,40 @@ const FinancialSite = () => {
         </section>
 
         <section className="stats">
-          <div className="container">
+          <div className="stats-content">
             <div className="stats-grid">
               <div className="stat-item">
                 <h3>$10B+</h3>
-                <p>Transactions Processed</p>
+                <p>TRANSACTIONS PROCESSED</p>
               </div>
               <div className="stat-item">
                 <h3>1000+</h3>
-                <p>Global Clients</p>
+                <p>GLOBAL CLIENTS</p>
               </div>
               <div className="stat-item">
                 <h3>99.9%</h3>
-                <p>Uptime Guarantee</p>
+                <p>UPTIME GUARANTEE</p>
               </div>
               <div className="stat-item">
                 <h3>24/7</h3>
-                <p>Expert Support</p>
+                <p>EXPERT SUPPORT</p>
               </div>
             </div>
           </div>
         </section>
 
         <section className="cta-section">
-          <div className="container">
-            <h2>Ready to Transform Your Financial Operations?</h2>
-            <p>
+          <div className="cta-content">
+            <h2 className="text-animate-hover">Ready to Transform Your Financial Operations?</h2>
+            <p className="text-animate-hover">
               Join thousands of businesses that trust SecureFinance for their financial needs.
             </p>
-            <a href="#contact" className="cta-button">Get Started Today</a>
+            <a href="#contact" className="cta-button">GET STARTED TODAY</a>
           </div>
         </section>
 
-        <footer>
-          <div className="container">
+        <footer className="financial-footer">
+          <div className="footer-content">
             <div className="footer-grid">
               <div className="footer-section">
                 <h3>Company</h3>
