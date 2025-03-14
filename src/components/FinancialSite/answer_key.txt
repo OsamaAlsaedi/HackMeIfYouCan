@@ -1,0 +1,30 @@
+answer key
+
+console.log("🧠 Cyber Practice Answer Sheet 🧠");
+
+console.log("\n1️⃣ Console Hints:");
+console.log("Open DevTools (F12 or right-click → Inspect) → Console tab.");
+console.log("You'll see hints like: 'Cyber Hint #1: Not all elements are added in HTML...'\n");
+
+console.log("2️⃣ Dynamically Injected Elements:");
+console.log("Go to Elements tab in DevTools, Ctrl+F and search for 'cyber-hidden'.");
+console.log("Find this hidden div: <div class='cyber-hidden'>🎯 Cyber Clue #2: This was added by JS!</div>");
+console.log("Use the Styles panel to toggle 'display: none' to reveal it.\n");
+
+console.log("3️⃣ Pseudo-Element ::after:");
+console.log("In Elements tab, inspect the <body> or a key container.");
+console.log("Look in the Styles pane for ::after — it has hidden text via 'color: transparent'.");
+console.log("Uncheck 'color: transparent' or change it to reveal the message.\n");
+
+console.log("4️⃣ Base64 Clue:");
+console.log("In the JS source, find this comment:");
+console.log("/* Clue: Q29uZ3JhdHMsIHlvdSBmb3VuZCB0aGUgYmFzZTY0IGNvZGUhIFRoZSBmbGFnIGlzOiB7ZmxhZ19pbl9jc3N9 */");
+console.log("Decode using base64decode.org → reveals: The flag is: {flag_in_css}\n");
+
+console.log("5️⃣ Hidden Flag in CSS:");
+console.log("In the compiled CSS or SCSS file, search for content like:");
+console.log("::after { content: '🕶️ Cyber Hint #4: Clues might be pseudo-elements.' }");
+console.log("Also check for color: transparent, and user-select: text.");
+console.log("Try selecting all text on the page to reveal anything hidden.\n");
+
+console.log("✅ Done! You're a cyber detective now. 🕵️‍♂️");
