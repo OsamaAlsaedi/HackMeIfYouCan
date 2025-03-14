@@ -343,4 +343,3 @@ document.body.appendChild(hiddenDiv);
 console.warn("🚨 Cyber Hint #3: The flag may be styled to disappear. Use DevTools to reveal it.");
 
 export default FinancialSite;
-/* hi */
