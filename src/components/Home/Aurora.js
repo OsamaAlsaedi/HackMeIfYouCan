@@ -1,5 +1,5 @@
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import './Aurora.css';
 
 const VERT = `#version 300 es
@@ -94,8 +94,6 @@ void main() {
   vec3 rampColor;
   COLOR_RAMP(colors, uv.x, rampColor);
   
-  // Animation speed is controlled by uTime * 0.1 and uTime * 0.25
-  // These values affect the horizontal and vertical movement speeds
   float height = snoise(vec2(uv.x * 2.0 + uTime * 0.1, uTime * 0.25)) * 0.5 * uAmplitude;
   height = exp(height);
   height = (uv.y * 2.0 - height + 0.2);
@@ -121,6 +119,7 @@ export default function Aurora(props) {
   propsRef.current = props;
 
   const ctnDom = useRef(null);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const ctn = ctnDom.current;
@@ -179,8 +178,6 @@ export default function Aurora(props) {
     const update = (t) => {
       animateId = requestAnimationFrame(update);
       const { time = t * 0.01, speed = 1.0 } = propsRef.current;
-      // Controls the animation speed of the aurora effect
-      // Lower values = slower movement, Higher values = faster movement
       program.uniforms.uTime.value = time * speed * 0.08;
       program.uniforms.uAmplitude.value = propsRef.current.amplitude ?? 0.1;
       program.uniforms.uBlend.value = propsRef.current.blend ?? blend;
@@ -190,6 +187,11 @@ export default function Aurora(props) {
         return [c.r, c.g, c.b];
       });
       renderer.render({ scene: mesh });
+      
+      // Set the canvas as ready after the first frame is rendered
+      if (!isReady) {
+        setIsReady(true);
+      }
     };
     animateId = requestAnimationFrame(update);
 
@@ -203,7 +205,7 @@ export default function Aurora(props) {
       }
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-  }, [amplitude, blend, colorStops, speed]);
+  }, [amplitude, blend, colorStops, speed, isReady]);
 
-  return <div ref={ctnDom} className="aurora-container" />;
+  return <div ref={ctnDom} className={`aurora-container ${isReady ? 'ready' : 'hidden'}`} />;
 }

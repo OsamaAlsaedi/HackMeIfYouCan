@@ -1,6 +1,4 @@
-@ -1,30 +0,0 @@
 answer key
-
 console.log("🧠 Cyber Practice Answer Sheet 🧠");
 
 console.log("\n1️⃣ Console Hints:");

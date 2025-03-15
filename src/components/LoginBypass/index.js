@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import AnimatedLetters from '../AnimatedLetters';
 import DecryptedText from './DecryptedText';
 import './index.scss';
@@ -20,6 +21,31 @@ const LoginBypass = () => {
     return (
         <div className="login-bypass-container">
             <div className="login-bypass-left-side">
+                <div className="website-boxes-container top-boxes">
+                    <div className="website-box website-box-1">
+                        <Link to="/sample-financial" className="image-container">
+                            <div className="placeholder-image"></div>
+                        </Link>
+                        <div className="button-group">
+                            <Link to="/sample-financial" className="login-bypass-button">Website 1</Link>
+                            <a href={`${process.env.PUBLIC_URL}/resume/AnswerKey.pdf`} className="answer-key-button" target="_blank" rel="noopener noreferrer">
+                                <span>?</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div className="website-box website-box-2">
+                        <Link to="/sample-website" className="image-container">
+                            <div className="placeholder-image"></div>
+                        </Link>
+                        <Link to="/sample-website" className="login-bypass-button">Website 2</Link>
+                    </div>
+                    <div className="website-box website-box-3">
+                        <Link to="/sample-website" className="image-container">
+                            <div className="placeholder-image"></div>
+                        </Link>
+                        <Link to="/sample-website" className="login-bypass-button">Website 3</Link>
+                    </div>
+                </div>
                 <h1>
                     <AnimatedLetters 
                         letterClass={letterClass} 
@@ -34,6 +60,26 @@ const LoginBypass = () => {
                         />
                     </span>
                 </h1>
+                <div className="website-boxes-container bottom-boxes">
+                    <div className="website-box website-box-4">
+                        <Link to="/sample-website" className="image-container">
+                            <div className="placeholder-image"></div>
+                        </Link>
+                        <Link to="/sample-website" className="login-bypass-button">Website 4</Link>
+                    </div>
+                    <div className="website-box website-box-5">
+                        <Link to="/sample-website" className="image-container">
+                            <div className="placeholder-image"></div>
+                        </Link>
+                        <Link to="/sample-website" className="login-bypass-button">Website 5</Link>
+                    </div>
+                    <div className="website-box website-box-6">
+                        <Link to="/sample-website" className="image-container">
+                            <div className="placeholder-image"></div>
+                        </Link>
+                        <Link to="/sample-website" className="login-bypass-button">Website 6</Link>
+                    </div>
+                </div>
             </div>
             <div className="login-bypass-right-side">
                 <DecryptedText

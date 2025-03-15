@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
@@ -18,9 +18,35 @@
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    html, body {
+      background: transparent !important;
+      margin: 0;
+      padding: 0;
+    }
+    #root {
+      opacity: 0;
+      transition: opacity 0.3s ease-in;
+    }
+    #root.ready {
+      opacity: 1;
+    }
+    .initial-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 9999;
+      pointer-events: none;
+    }
+  </style>
   <title>React App</title>
   </head>
   <body>
+    <div class="initial-loader"></div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script type="text/javascript"
@@ -31,6 +57,12 @@
         (function(){
           emailjs.init("nLRyYX9Iy-KDrZTLd");
       })();
+    </script>
+    <script type="text/javascript">
+      // Add class to root when content is loaded
+      window.addEventListener('load', function() {
+        document.getElementById('root').classList.add('ready');
+      });
     </script>
   </body>
 </html>

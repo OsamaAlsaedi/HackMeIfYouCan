@@ -1,5 +1,6 @@
 html {
   font-size: 62.5%;
+  background: transparent !important;
 }
 
 body {
@@ -7,11 +8,12 @@ body {
   padding: 0;
   font: 300 11px/1.4 'Helvetica Neue', 'sans-serif';
   color: #ffffff;
-  background: #ffffff;
+  background: transparent !important;
   overflow: hidden;
   display: block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 .dashboard {
@@ -27,4 +29,57 @@ body {
 
 #root {
   height: 100vh;
+  background: transparent !important;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+#root.ready {
+  opacity: 1;
+}
+
+/* Prevent white flash during load */
+.aurora-container {
+  opacity: 0;
+  animation: fadeInAurora 0.3s ease-in forwards;
+  animation-delay: 0.1s;
+}
+
+.aurora-container.ready {
+  opacity: 1;
+}
+
+@keyframes fadeInAurora {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Ensure all route transitions maintain transparency */
+.route-transition {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent !important;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Prevent white flash during component mounting */
+.component-mount {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -48,9 +48,171 @@
     }
 }
 
+/* Website boxes container */
+.website-boxes-container {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 60px 0 100px;
+    margin-right: -40px;
+}
+
+.top-boxes {
+    top: 100px;
+}
+
+.bottom-boxes {
+    bottom: 100px;
+}
+
+/* Website box styling */
+.website-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 200px;
+    padding: 12px;
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: login-bypass-fadeIn 1s forwards;
+    opacity: 0;
+}
+
+/* Animation delays for top boxes */
+.website-box-1 {
+    animation-delay: 0.3s;
+}
+
+.website-box-2 {
+    animation-delay: 0.5s;
+}
+
+.website-box-3 {
+    animation-delay: 0.7s;
+}
+
+/* Animation delays for bottom boxes */
+.website-box-4 {
+    animation-delay: 1.3s;
+}
+
+.website-box-5 {
+    animation-delay: 1.5s;
+}
+
+.website-box-6 {
+    animation-delay: 1.7s;
+}
+
+.image-container {
+    width: 100%;
+    height: 120px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 12px;
+    background-color: #ffffff;
+
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &::after {
+        content: 'Preview';
+        color: #333;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: 'Helvetica Neue', sans-serif;
+    }
+}
+
+.website-box-1 .placeholder-image {
+    background: url('../../images/web1.png') center/cover no-repeat;
+    
+    &::after {
+        content: '';
+    }
+}
+.website-box-2 .placeholder-image {
+    background: url('../../images/web1.png') center/cover no-repeat;
+    
+    &::after {
+        content: '';
+    }
+}
+.website-box-3 .placeholder-image {
+    background: url('../../images/web1.png') center/cover no-repeat;
+    
+    &::after {
+        content: '';
+    }
+}
+
+.website-box-4 .placeholder-image {
+    background: url('../../images/web1.png') center/cover no-repeat;
+    
+    &::after {
+        content: '';
+    }
+}
+
+.website-box-5 .placeholder-image {
+    background: url('../../images/web1.png') center/cover no-repeat;
+    
+    &::after {
+        content: '';
+    }
+}
+
+.website-box-6 .placeholder-image {
+    background: url('../../images/web1.png') center/cover no-repeat;
+    
+    &::after {
+        content: '';
+    }
+}
+
+
+.login-bypass-button {
+    display: inline-block;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: #000000;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
 /* Only target the text-animate classes within LoginBypass */
 .login-bypass-left-side .text-animate {
-    /* Override only in this component */
     opacity: 1;
     color: #000000;
 }
@@ -81,26 +243,14 @@
     }
 }
 
-/* Use component-specific animation names */
+/* Animations */
 @keyframes login-bypass-glitch {
-    0% {
-        transform: translate(0);
-    }
-    20% {
-        transform: translate(-2px, 2px);
-    }
-    40% {
-        transform: translate(-2px, -2px);
-    }
-    60% {
-        transform: translate(2px, 2px);
-    }
-    80% {
-        transform: translate(2px, -2px);
-    }
-    100% {
-        transform: translate(0);
-    }
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
 }
 
 @keyframes login-bypass-fadeIn {
@@ -134,5 +284,71 @@ button {
 
     .login-bypass-right-side .login-bypass-subtitle {
         font-size: 18px;
+    }
+
+    .website-box {
+        max-width: 320px;
+        padding: 15px;
+    }
+
+    .image-container {
+        height: 200px;
+    }
+
+    .login-bypass-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.answer-key-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &:hover {
+        background: #000000;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        &::after {
+            content: 'Click me for answer key';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: normal;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 1;
+            transition: opacity 0.2s ease;
+        }
+    }
+
+    span {
+        line-height: 1;
     }
 }

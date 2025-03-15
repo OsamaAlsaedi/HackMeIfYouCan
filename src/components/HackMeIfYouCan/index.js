@@ -20,17 +20,21 @@ const HackMeIfYouCan = () => {
         <h1>
           <AnimatedLetters
             letterClass={letterClass}
-            strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
+            strArray={['H', 'a', 'c', 'k', ' ', 'M', 'e']}
             idx={15}
           />
         </h1>
-        <div className="hack-me-contact-form" ref={refForm}>
-          <Link to="/LoginBypass" className="hack-me-flat-button">Start Now</Link>
+        <div className="website-box">
+          <Link to="/sample-website" className="image-container">
+            {/* Placeholder for image */}
+            <div className="placeholder-image"></div>
+          </Link>
+          <Link to="/sample-website" className="hack-me-flat-button">Website 1</Link>
         </div>
       </div>
       <div className="hack-me-right-side">
         <p>
-          Hello World!
+          Can you find the vulnerability?
         </p>
       </div>
     </div>

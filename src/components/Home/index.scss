@@ -5,7 +5,12 @@
 
 .home-page {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    min-height: 100vh;
+    background: transparent;
+    opacity: 0;
+    animation: fadeInContent 0.5s ease-in forwards;
+    animation-delay: 0.3s; // Slight delay to ensure aurora loads first
     
     .text-zone {
         position: absolute;
@@ -92,6 +97,15 @@
             color: #ffffff;
             border-color: #ff0000;
         }
+    }
+}
+
+@keyframes fadeInContent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
   

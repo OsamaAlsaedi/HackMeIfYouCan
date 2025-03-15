@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import './styles.scss';
 
 const FinancialSite = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeSection, setActiveSection] = useState('dashboard');
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 50;
+      setIsScrolled(scrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const dummyAccountData = {
     checking: 5234.67,
@@ -98,18 +109,18 @@ const FinancialSite = () => {
       <div className="financial-wrapper">
         <header>
           <div className="container">
-            <a href="#" className="logo">
-              Secure<span>Finance</span>
-            </a>
-            <nav>
-              <ul className="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#solutions">Solutions</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#login" className="cta-button">Login</a></li>
-              </ul>
-            </nav>
+            <div className={`horizontal-sidebar ${isScrolled ? 'scrolled' : ''}`}>
+              <a href="#" className="logo">
+                Secure<span>Finance</span>
+              </a>
+              <nav className="nav-links">
+                <a href="#features">Features</a>
+                <a href="#solutions">Solutions</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#about">About</a>
+                <a href="#login">Login</a>
+              </nav>
+            </div>
           </div>
         </header>
 
