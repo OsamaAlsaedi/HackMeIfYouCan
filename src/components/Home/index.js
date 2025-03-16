@@ -67,7 +67,13 @@ const Home = () => {
             </GradientText>
           </Link>
         </div>
-        <Logo />
+        <div className="logo-container" style={{
+          opacity: 0,
+          animation: 'fadeIn 0.5s forwards',
+          animationDelay: '3.8s'
+        }}>
+          <Logo />
+        </div>
       </div>
       <Loader type="pacman" />
     </>

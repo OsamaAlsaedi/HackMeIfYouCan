@@ -128,10 +128,12 @@ export default function Aurora(props) {
     const renderer = new Renderer({
       alpha: true,
       premultipliedAlpha: true,
-      antialias: true
+      antialias: true,
+      powerPreference: 'high-performance'
     });
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
     gl.canvas.style.backgroundColor = 'transparent';
@@ -207,5 +209,5 @@ export default function Aurora(props) {
     };
   }, [amplitude, blend, colorStops, speed, isReady]);
 
-  return <div ref={ctnDom} className={`aurora-container ${isReady ? 'ready' : 'hidden'}`} />;
+  return <div ref={ctnDom} className="aurora-container" style={{ opacity: isReady ? 1 : 0, transition: 'opacity 0.5s ease-in' }} />;
 }
